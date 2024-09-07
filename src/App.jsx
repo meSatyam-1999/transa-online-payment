@@ -1,5 +1,4 @@
 import './App.css'
-import { Button } from 'antd';
 
 
 function App() {
@@ -7,7 +6,7 @@ function App() {
 
   return (
     <>
-     
+     <h1 className='text-3xl font-bold underline'>Hello satyam</h1>
     </>
   )
 }
