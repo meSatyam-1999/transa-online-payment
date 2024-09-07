@@ -1,4 +1,5 @@
 import { Row, Col, Form } from "antd";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   
@@ -6,38 +7,40 @@ const Register = () => {
       console.log("Received values form: ", values);
     }
 
+    const navigate = useNavigate();
+
     return (
     <div className="m-5 py-8 bg-[#CEE6F3]">
       
       <div className="flex items-center justify-between">
       <h1 className="text-3xl">Transa - REGISTRATION</h1>
-      <h1 className="text-md mr-12 underline cursor-pointer">Already a member? Login</h1>
+      <h1 onClick={() => navigate("/login")} className="text-md mr-12 underline cursor-pointer">Already a member? Login</h1>
       </div>
       
       <hr className="my-5 border-black" />
 
-      <Form layout="vertical" onFinish={onFinish}>
+      <Form layout="vertical" onFinish={onFinish} className="m-8">
         <Row>
           <Col span={6}>
-            <Form.Item label="First Name" name="firstName">
+            <Form.Item label="First Name*" name="firstName">
               <input className="border-2 border-black p-2 px-20" type="text" />
             </Form.Item>
           </Col>
 
           <Col span={6}>
-            <Form.Item label="Last Name" name="lastName">
+            <Form.Item label="Last Name*" name="lastName">
               <input className="border-2 border-black p-2 px-20" type="text" />
             </Form.Item>
           </Col>
 
           <Col span={6}>
-            <Form.Item label="E-mail" name="email">
+            <Form.Item label="E-mail*" name="email">
               <input className="border-2 border-black p-2 px-20" type="text" />
             </Form.Item>
           </Col>
 
           <Col span={6}>
-            <Form.Item label="Mobile" name="mobileNumber">
+            <Form.Item label="Mobile No.*" name="mobileNumber">
               <input className="border-2 border-black p-2 px-20" type="text" />
             </Form.Item>
           </Col>
@@ -45,7 +48,7 @@ const Register = () => {
           {/* 2nd row */}
 
           <Col span={6}>
-            <Form.Item label="Identification Type" name="identificationType">
+            <Form.Item label="Identification Type*" name="identificationType">
               <select className="border-2 border-black p-2 px-20">
                 <option value="NATIONAL ID">National ID</option>
                 <option value="VOTER CARD">Voter Card</option>
@@ -56,13 +59,13 @@ const Register = () => {
           </Col>
 
           <Col span={6}>
-            <Form.Item label="Identification Number" name="IdentificationNumber">
+            <Form.Item label="Identification Number*" name="IdentificationNumber">
               <input className="border-2 border-black p-2 px-20" type="text" />
             </Form.Item>
           </Col>
 
           <Col span={24}>
-            <Form.Item label="Address" name="address">
+            <Form.Item label="Address*" name="address">
               <input className="border-2 border-black w-[100%] p-8" type="text" />
             </Form.Item>
           </Col>
